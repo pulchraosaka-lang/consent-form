@@ -4,198 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>同意書 - PULCHRA</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Noto Sans JP', sans-serif; background: #111; color: #fff; }
-#landing { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 40px 20px; text-align: center; background: linear-gradient(160deg, #1a1a1a, #0a0a0a); }
-.logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
-.hex { width: 44px; height: 44px; background: white; clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display: flex; align-items: center; justify-content: center; color: #111; font-weight: 900; font-size: 18px; }
-.logo-name { font-size: 24px; font-weight: 900; letter-spacing: 0.2em; }
-.logo-sub { font-size: 10px; color: #888; letter-spacing: 0.15em; }
-.enter-btn { background: white; color: #111; border: none; border-radius: 50px; padding: 16px 48px; font-size: 15px; font-weight: 700; font-family: 'Noto Sans JP', sans-serif; cursor: pointer; margin-top: 24px; letter-spacing: 0.05em; display: block; }
-.land-note { font-size: 11px; color: #555; line-height: 1.8; margin-top: 16px; }
-#form-page { display: none; max-width: 680px; margin: 0 auto; padding: 0 0 40px; background: #f0f0f0; }
-.logo-header { background: #111; padding: 20px 24px; display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.h-hex { width: 36px; height: 36px; background: white; clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); display: flex; align-items: center; justify-content: center; color: #111; font-weight: 900; font-size: 14px; flex-shrink: 0; }
-.h-name { font-size: 18px; font-weight: 900; letter-spacing: 0.2em; color: white; }
-.h-sub { font-size: 9px; color: #888; letter-spacing: 0.15em; }
-.doc-body { background: white; padding: 24px 20px; margin-bottom: 12px; }
-.doc-title { font-size: 26px; font-weight: 700; margin-bottom: 18px; color: #222; }
-.doc-text { font-size: 14px; line-height: 1.9; color: #333; margin-bottom: 14px; }
-.doc-text p { margin-bottom: 12px; }
-.blist { list-style: none; padding: 0; margin: 0 0 12px; }
-.blist li { font-size: 14px; line-height: 1.9; color: #333; margin-bottom: 6px; }
-.blist li::before { content: '■'; margin-right: 4px; }
-.notice { margin: 16px 0 12px; font-weight: 500; font-size: 14px; color: #333; }
-.warn { font-weight: 700; font-size: 14px; line-height: 1.9; }
-.req-note { background: white; padding: 12px 20px; color: #d93025; font-size: 13px; margin-bottom: 12px; }
-.card { background: white; border: 1px solid #dadce0; border-radius: 8px; padding: 20px; margin-bottom: 12px; }
-.flabel { font-size: 15px; font-weight: 500; color: #202124; margin-bottom: 14px; display: block; }
-.rstar { color: #d93025; margin-left: 3px; }
-.finput { border: none; border-bottom: 1px solid #999; width: 100%; max-width: 280px; padding: 6px 0; font-size: 14px; font-family: 'Noto Sans JP', sans-serif; color: #202124; background: transparent; outline: none; display: block; }
-.finput:focus { border-bottom: 2px solid #111; }
-.finput::placeholder { color: #bbb; }
-.errmsg { color: #d93025; font-size: 12px; margin-top: 5px; display: none; }
-.submit-row { display: flex; justify-content: space-between; align-items: center; padding: 0 0 12px; }
-.sbtn { background: #111; color: white; border: none; border-radius: 4px; padding: 12px 28px; font-size: 15px; font-family: 'Noto Sans JP', sans-serif; cursor: pointer; font-weight: 500; }
-.sbtn:disabled { background: #aaa; cursor: not-allowed; }
-.footer { text-align: center; padding: 16px; font-size: 12px; color: #666; }
-#done-page { display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: #111; padding: 40px 20px; text-align: center; }
-.done-icon { font-size: 60px; margin-bottom: 18px; }
-.done-title { font-size: 20px; font-weight: 700; color: white; margin-bottom: 10px; }
-.done-desc { font-size: 13px; color: #aaa; line-height: 1.9; margin-bottom: 28px; }
-.back-btn { background: none; border: 1px solid #444; border-radius: 50px; padding: 11px 28px; font-size: 13px; font-family: 'Noto Sans JP', sans-serif; color: #aaa; cursor: pointer; }
-.spinner { display: inline-block; width: 15px; height: 15px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: sp 0.7s linear infinite; }
-@keyframes sp { to { transform: rotate(360deg); } }
+  body { font-family: sans-serif; background: #111; color: #fff; text-align: center; padding: 20px; }
+  .card { background: white; color: #111; padding: 20px; border-radius: 8px; margin: 10px auto; max-width: 400px; text-align: left; }
+  input { width: 100%; padding: 12px; margin: 8px 0 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+  button { background: #fff; color: #111; border: none; padding: 15px 40px; border-radius: 50px; cursor: pointer; font-weight: bold; width: 100%; font-size: 18px; }
 </style>
 </head>
 <body>
-
-<div id="landing">
-  <div class="logo-wrap">
-    <div class="hex">P</div>
-    <div>
-      <div class="logo-name">PULCHRA</div>
-      <div class="logo-sub">- プルクラ - Room-style Men's Esthe</div>
-    </div>
-  </div>
-  <p style="color:#aaa;font-size:13px;margin-bottom:20px;">ご来店同意書</p>
-  <button class="enter-btn" onclick="showForm()">✏️ 同意書フォームに進む</button>
-  <div class="land-note">※ 入力内容はスプレッドシートに記録されます<br>※ 個人情報は施術目的のみに使用します</div>
-</div>
-
-<div id="form-page">
-  <div class="logo-header">
-    <div class="h-hex">P</div>
-    <div>
-      <div class="h-name">PULCHRA</div>
-      <div class="h-sub">- プルクラ - Room-style Men's Esthe</div>
-    </div>
-  </div>
-  <div class="doc-body">
-    <div class="doc-title">同意書</div>
-    <div class="doc-text">
-      <p>以下の注意事項、禁止事項をお守り頂けないお客様のご利用はご遠慮願います。</p>
-      <p>※当店は本格的なリンパオイルマッサージをご提供するサロンであり、風俗的サービスは一切行なっておりません。<br>※18歳未満の方、同業者、スカウト目的、暴力団関係者、薬物使用者、泥酔者、その他当店がふさわしくないと判断した方のお問い合わせ及びご利用は固くお断り致します。<br>施術前のシャワーと、施術中の紙ショーツのご着用を必ずお願い致します。</p>
-      <p>※当店を快適により安全にご利用いただくために、以下に該当する項目がある場合施術をお断りさせて頂く場合がございます。ご了承のほど宜しくお願いいたします。</p>
-    </div>
-    <ul class="blist">
-      <li>18歳未満の方（高校生の方）</li>
-      <li>下半身を露出させる行為・自慰行為・性的サービスの要求を固く禁止致します。</li>
-      <li>薬物、ドラッグそれらに類する物の服用、所持、使用されている方、使用する行為。</li>
-      <li>同業者、スカウト及びスカウトに準ずる者のスカウト行為や発言等</li>
-      <li>ビデオカメラ、デジタルカメラ、カメラ付携帯などの機器を使っての撮影、盗聴、盗撮行為。（当社規定の罰金）</li>
-      <li>当店を媒介としないセラピストへの勧誘、お誘い。</li>
-      <li>ご利用時間終了になってもセラピストを拘束、及びそれに準ずる行為。</li>
-      <li>当店スタッフが運営、営業上での注意事項・禁止事項をお守り頂けないと判断された方。</li>
-      <li>ご予約後のキャンセルは受付ておりませんのでご注意ください。</li>
-    </ul>
-    <ul class="blist">
-      <li>泥酔状態の方</li>
-      <li>熱のある方</li>
-      <li>高血圧の方</li>
-      <li>重度の疾患を患っている方</li>
-      <li>足に重い水虫・炎症などの異常がある方</li>
-      <li>足に怪我、捻挫などの異常がある方</li>
-    </ul>
-    <div class="notice">※注意事項※</div>
-    <ul class="blist">
-      <li>施術中は指定の紙パンツのご着用をお願いします。</li>
-      <li>感染症の可能性のある方のご利用はお控えください。セラピストの安全のために、患部への直接の施術がない場合でも伝染病や感染症の可能性がある方へのマッサージはお断りさせていただいております。</li>
-      <li>当店で行う手技は医療行為とは全く異なるものであります。</li>
-      <li>特定部分の長時間の集中的な施術のご要求はお断り致します。</li>
-      <li>当店のオイル使用に伴う皮膚のトラブル等は責任を負いかねますのでご了承ください</li>
-      <li>店内にて貴重品は自己管理でお願い致します。</li>
-      <li>当店は医療法の定める診療所や治療院、またその他の施術所ではございません。</li>
-      <li>癒しと休息を提供するリンパオイルマッサージのお店です。</li>
-      <li>性的サービスの要求、自慰行為、セラピストへの接触行為等のセクハラ行為。（当社規定の罰金）</li>
-      <li>当店は風俗店では御座いません。その類の目的でのご来店、またセラピストの嫌がる行動や言動は固く禁止します。</li>
-    </ul>
-    <div class="doc-text" style="margin-top:14px;">
-      <p>盗撮、盗聴等の行為があった際はすぐに所轄警察署に被害届を提出し法的手続き（損害賠償請求など）もとらせていただきます。当店はこのような悪質な行為を絶対に許しません。</p>
-      <p>上記項目をお守り頂けない方は公的機関に通報いたします。ご利用いただけない方の今後のご利用はお断りさせて頂き損害賠償請求させていただきます。また、サービス中に上記事項が行われた場合は即サービスを中止いたします。その際、料金の返金には一切応じられませんので予めご了承ください。</p>
-    </div>
-    <div class="warn">※お客様のGoogleアカウントが共有される事はございませんのでご安心下さいませ。</div>
-  </div>
-  <div class="req-note">* 必須の質問です</div>
+  <h2 style="margin: 30px 0;">PULCHRA 同意書</h2>
   <div class="card">
-    <label class="flabel">日付 <span class="rstar">*</span></label>
-    <input class="finput" id="f-date" type="text" placeholder="例：2025年1月1日">
-    <div class="errmsg" id="e-date">日付を入力してください</div>
+    <label>お名前</label><input id="name" type="text" placeholder="氏名を入力">
+    <label>お電話番号</label><input id="tel" type="tel" placeholder="09012345678">
+    <button id="sbtn" onclick="send()">同意して送信</button>
   </div>
-  <div class="card">
-    <label class="flabel">ご署名 <span class="rstar">*</span></label>
-    <input class="finput" id="f-name" type="text" placeholder="回答を入力">
-    <div class="errmsg" id="e-name">署名を入力してください</div>
-  </div>
-  <div class="card">
-    <label class="flabel">電話番号 <span class="rstar">*</span></label>
-    <input class="finput" id="f-tel" type="tel" placeholder="回答を入力">
-    <div class="errmsg" id="e-tel">電話番号を入力してください</div>
-  </div>
-  <div class="submit-row">
-    <button class="sbtn" id="sbtn" onclick="handleSubmit()">送信</button>
-    <button style="background:none;border:none;color:#444;font-size:14px;cursor:pointer;" onclick="clearForm()">フォームをクリア</button>
-  </div>
-  <div class="footer">このフォームでパスワードを送信しないでください。</div>
-</div>
-
-<div id="done-page">
-  <div class="done-icon">✅</div>
-  <div class="done-title">送信が完了しました</div>
-  <div class="done-desc">ご記入ありがとうございます。<br><span style="color:#06C755;font-weight:700;">📲 FloraのLINEに通知が届きます</span></div>
-  <button class="back-btn" onclick="showLanding()">トップに戻る</button>
-</div>
 
 <script>
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzYo8qfsxSXHNrTek1uht8_1Khidclp-BsDAz5VrxWYr4IaP5KkWMQe0Zcr-aELzsAr0A/exec';
-  let formData = {};
+  // これが正しいデータの送り先です
+  const URL = "https://script.google.com/macros/s/AKfycbzYo8qfsxSXHNrTek1uht8_1Khidclp-BsDAz5VrxWYr4IaP5KkWMQe0Zcr-aELzsAr0A/exec";
 
-  window.onload = function() {
-    document.getElementById('f-date').value =
-      new Date().toLocaleDateString('ja-JP', {year:'numeric',month:'long',day:'numeric'});
-  };
+  async function send() {
+    const name = document.getElementById('name').value;
+    const tel = document.getElementById('tel').value;
+    if(!name || !tel) return alert("お名前と電話番号を入れてね！");
 
-  function showForm() {
-    document.getElementById('landing').style.display = 'none';
-    document.getElementById('form-page').style.display = 'block';
-    window.scrollTo(0, 0);
-  }
-  function showLanding() {
-    document.getElementById('landing').style.display = 'flex';
-    document.getElementById('form-page').style.display = 'none';
-    document.getElementById('done-page').style.display = 'none';
-    window.scrollTo(0, 0);
-  }
-  async function handleSubmit() {
-    let valid = true;
-    const date = document.getElementById('f-date').value.trim();
-    const name = document.getElementById('f-name').value.trim();
-    const tel  = document.getElementById('f-tel').value.trim();
-    ['e-date','e-name','e-tel'].forEach(id => document.getElementById(id).style.display='none');
-    if (!date) { document.getElementById('e-date').style.display='block'; valid=false; }
-    if (!name) { document.getElementById('e-name').style.display='block'; valid=false; }
-    if (!tel)  { document.getElementById('e-tel').style.display='block'; valid=false; }
-    if (!valid) return;
-    formData = { date, name, tel, options: 'なし' };
     const btn = document.getElementById('sbtn');
-    btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span> 送信中...';
+    btn.disabled = true; btn.innerText = "送信中...";
+
     try {
-      await fetch(GAS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(formData) });
-    } catch(e) {}
-    btn.disabled = false;
-    btn.innerHTML = '送信';
-    document.getElementById('form-page').style.display = 'none';
-    document.getElementById('done-page').style.display = 'flex';
-    window.scrollTo(0, 0);
-  }
-  function clearForm() {
-    document.getElementById('f-date').value = new Date().toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
-    document.getElementById('f-name').value = '';
-    document.getElementById('f-tel').value = '';
-    ['e-date','e-name','e-tel'].forEach(id=>document.getElementById(id).style.display='none');
+      await fetch(URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify({ 
+          name: name, 
+          tel: tel, 
+          date: new Date().toLocaleDateString('ja-JP'), 
+          options: "同意済み" 
+        })
+      });
+      document.body.innerHTML = "<div style='margin-top:100px;'><h2 style='font-size:60px;'>✅</h2><h2 style='color:#fff;'>送信完了！</h2><p style='color:#aaa;'>ありがとうございました。</p></div>";
+    } catch(e) {
+      alert("エラー！スタッフを呼んでください");
+      btn.disabled = false; btn.innerText = "同意して送信";
+    }
   }
 </script>
 </body>
