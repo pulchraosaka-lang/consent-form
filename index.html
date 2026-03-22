@@ -9,35 +9,33 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Noto Sans JP', sans-serif; background: #111; color: #fff; text-align: center; padding: 20px; }
   .container { max-width: 500px; margin: 0 auto; }
-  h2 { margin: 30px 0; letter-spacing: 0.1em; }
+  h2 { margin: 30px 0; letter-spacing: 0.1em; color: #fff; }
   
-  /* 同意文章を表示するエリア */
+  /* 同意文章：枠を固定せず、全文が最初から見えるようにしました */
   .agreement-text { 
     background: #222; 
     border: 1px solid #444; 
     border-radius: 8px; 
-    padding: 20px; 
+    padding: 24px; 
     margin-bottom: 25px; 
     text-align: left; 
-    font-size: 14px; 
+    font-size: 15px; 
     line-height: 1.8; 
     color: #ddd;
-    height: 300px; /* 文章が長い場合にスクロールできるよう高さを固定 */
-    overflow-y: auto;
   }
-  .agreement-text b { color: #fff; text-decoration: underline; }
+  .agreement-text b { color: #fff; text-decoration: underline; font-size: 16px; }
 
-  /* 入力欄のカード */
+  /* 入力エリア */
   .card { background: white; color: #111; padding: 25px; border-radius: 12px; text-align: left; margin-bottom: 20px; }
   label { font-weight: 700; font-size: 15px; display: block; margin-bottom: 8px; }
-  input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; }
+  input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; outline: none; }
   
   /* 送信ボタン */
   button { 
     background: #fff; color: #111; border: none; padding: 18px; border-radius: 50px; 
     cursor: pointer; font-weight: 900; width: 100%; font-size: 18px; 
   }
-  button:disabled { background: #666; color: #888; }
+  button:active { background: #ccc; }
 </style>
 </head>
 <body>
@@ -46,27 +44,27 @@
 
     <div class="agreement-text">
       <p><b>■ ご利用規約</b></p><br>
-      <p>1. 当店はリラクゼーション・リンパオイルマッサージを提供しており、<b>風俗的サービスは一切行なっておりません。</b></p><br>
-      <p>2. セラピストへの性的サービスの強要、過度な接触、公序良俗に反する行為があった場合は、直ちに施術を中止し、法的措置を含めた対応を取らせていただきます。その際の返金には応じかねます。</p><br>
+      <p>1. 当店は本格的なリンパオイルマッサージを提供しており、<b>風俗的サービスは一切行なっておりません。</b></p><br>
+      <p>2. セラピストへの性的サービスの強要、過度な接触、公序良俗に反する行為があった場合は、直ちに施術を中止し、代金の返金なしでご退店いただきます。悪質な場合は法的措置を検討いたします。</p><br>
       <p>3. 以下の項目に該当する方の入店はお断りいたします。<br>
       ・泥酔されている方<br>
       ・暴力団関係者の方<br>
       ・スカウト、引き抜き目的の方</p><br>
       <p>4. 貴重品の紛失・盗難について、当店では一切の責任を負いかねます。</p><br>
-      <p>上記の規約をすべて確認し、内容に同意いたします。</p>
+      <p><b>上記の規約を確認し、内容に同意いたします。</b></p>
     </div>
 
     <div class="card">
-      <label>お名前</label>
+      <label>お名前（フルネーム）</label>
       <input id="name" type="text" placeholder="氏名をご記入ください">
       <label>お電話番号</label>
-      <input id="tel" type="tel" placeholder="09012345678">
+      <input id="tel" type="tel" placeholder="例：09012345678">
       <button id="sbtn" onclick="send()">同意して送信</button>
     </div>
   </div>
 
 <script>
-  // バージョン15で発行されたURLを反映済みです
+  // 写真12枚目で発行されたVersion 15のURLをセットしました
   const URL = "https://script.google.com/macros/s/AKfycbze2a41I-jaUtGhZ_H7hy-892lifMz6sZDDuZ0Qi73Wjij2mfDZHpIl1D1euKHj4tsOCg/exec";
 
   async function send() {
@@ -88,10 +86,9 @@
           options: "同意済み" 
         })
       });
-      // 送信完了後の画面
-      document.body.innerHTML = "<div style='margin-top:150px;'><h2 style='font-size:80px;'>✅</h2><h2>送信完了</h2><p>ありがとうございました。</p></div>";
+      document.body.innerHTML = "<div style='margin-top:150px;'><h2 style='font-size:80px;'>✅</h2><h2>送信完了しました</h2><p>ありがとうございました。</p></div>";
     } catch(e) {
-      alert("通信エラーが発生しました。");
+      alert("送信に失敗しました。スタッフをお呼びください。");
       btn.disabled = false; btn.innerText = "同意して送信";
     }
   }
