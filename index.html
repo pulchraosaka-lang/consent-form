@@ -4,94 +4,125 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>同意書 - PULCHRA</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Noto Sans JP', sans-serif; background: #111; color: #fff; text-align: center; padding: 20px; }
-  .container { max-width: 500px; margin: 0 auto; }
-  h2 { margin: 30px 0; letter-spacing: 0.1em; color: #fff; }
-  
-  /* 同意文章：枠を固定せず、全文が最初から見えるようにしました */
-  .agreement-text { 
-    background: #222; 
-    border: 1px solid #444; 
-    border-radius: 8px; 
-    padding: 24px; 
-    margin-bottom: 25px; 
-    text-align: left; 
-    font-size: 15px; 
-    line-height: 1.8; 
-    color: #ddd;
-  }
-  .agreement-text b { color: #fff; text-decoration: underline; font-size: 16px; }
-
-  /* 入力エリア */
-  .card { background: white; color: #111; padding: 25px; border-radius: 12px; text-align: left; margin-bottom: 20px; }
-  label { font-weight: 700; font-size: 15px; display: block; margin-bottom: 8px; }
-  input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; outline: none; }
-  
-  /* 送信ボタン */
-  button { 
-    background: #fff; color: #111; border: none; padding: 18px; border-radius: 50px; 
-    cursor: pointer; font-weight: 900; width: 100%; font-size: 18px; 
-  }
-  button:active { background: #ccc; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;background:#0a0a0a;color:#e8e8e8;padding:0 0 60px}
+.header{border-bottom:1px solid #2a2a2a;padding:28px 20px;text-align:center}
+.brand{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;letter-spacing:.35em;color:#fff}
+.brand-sub{font-size:10px;letter-spacing:.25em;color:#888;margin-top:4px}
+.container{max-width:580px;margin:0 auto;padding:0 20px}
+.title{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;text-align:center;padding:36px 0 24px;letter-spacing:.15em}
+.agreement{background:#141414;border:1px solid #2a2a2a;border-radius:2px;padding:28px 24px;font-size:13px;line-height:1.9;color:#bbb}
+.agreement-important{border-left:2px solid #c8a96e;padding-left:14px;margin:16px 0;color:#e8e8e8}
+.agreement h4{font-size:11px;letter-spacing:.15em;color:#c8a96e;margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid #2a2a2a}
+.agreement ul{list-style:none;margin-bottom:16px}
+.agreement ul li{padding:6px 0 6px 16px;position:relative;border-bottom:1px solid #2a2a2a;font-size:12.5px}
+.agreement ul li:last-child{border-bottom:none}
+.agreement ul li::before{content:"—";position:absolute;left:0;color:#c8a96e}
+.agreement p{margin-bottom:14px}
+.warning{background:#1a1410;border:1px solid #3a2a1a;padding:14px;margin-top:20px;font-size:12px;color:#aaa;line-height:1.8}
+.form-card{background:#141414;border:1px solid #2a2a2a;padding:28px 24px;margin-top:16px}
+.form-label{display:block;font-size:11px;letter-spacing:.15em;color:#888;margin-bottom:8px}
+.form-label span{color:#c8a96e}
+.form-input{width:100%;background:#0a0a0a;border:1px solid #333;padding:14px 16px;font-size:16px;font-family:'Noto Sans JP',sans-serif;color:#fff;outline:none;margin-bottom:24px;-webkit-appearance:none;border-radius:2px}
+.form-input:focus{border-color:#c8a96e}
+.form-input::placeholder{color:#444}
+.agree-box{background:#0f0f0f;border:1px solid #333;padding:16px;margin-bottom:24px;display:flex;align-items:flex-start;gap:12px}
+.agree-box input{width:18px;height:18px;accent-color:#c8a96e;flex-shrink:0;margin-top:2px}
+.agree-text{font-size:13px;line-height:1.7;color:#888}
+.agree-text strong{color:#e8e8e8;display:block;margin-bottom:2px}
+.submit-btn{width:100%;background:transparent;border:1px solid #c8a96e;color:#c8a96e;padding:18px;font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.25em;cursor:pointer;transition:all .3s;border-radius:2px}
+.submit-btn:hover{background:#c8a96e;color:#0a0a0a}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed}
+.complete{display:none;text-align:center;padding:80px 20px}
+.complete-icon{font-size:56px;margin-bottom:24px;display:block}
+.complete h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;letter-spacing:.2em;color:#fff;margin-bottom:12px}
+.complete p{color:#888;font-size:13px;line-height:1.8}
+.note{text-align:center;font-size:11px;color:#555;margin-top:20px}
 </style>
 </head>
 <body>
-  <div class="container">
-    <h2>PULCHRA 同意書</h2>
-
-    <div class="agreement-text">
-      <p><b>■ ご利用規約</b></p><br>
-      <p>1. 当店は本格的なリンパオイルマッサージを提供しており、<b>風俗的サービスは一切行なっておりません。</b></p><br>
-      <p>2. セラピストへの性的サービスの強要、過度な接触、公序良俗に反する行為があった場合は、直ちに施術を中止し、代金の返金なしでご退店いただきます。悪質な場合は法的措置を検討いたします。</p><br>
-      <p>3. 以下の項目に該当する方の入店はお断りいたします。<br>
-      ・泥酔されている方<br>
-      ・暴力団関係者の方<br>
-      ・スカウト、引き抜き目的の方</p><br>
-      <p>4. 貴重品の紛失・盗難について、当店では一切の責任を負いかねます。</p><br>
-      <p><b>上記の規約を確認し、内容に同意いたします。</b></p>
+<div class="header">
+  <div class="brand">PULCHRA</div>
+  <div class="brand-sub">ROOM-STYLE MEN'S ESTHE · OSAKA</div>
+</div>
+<div class="container" id="main">
+  <div class="title">ご来店同意書</div>
+  <div class="agreement">
+    <p>以下の注意事項・禁止事項をお守り頂けないお客様のご利用はご遠慮願います。</p>
+    <div class="agreement-important">
+      <p>当店は本格的なリンパオイルマッサージをご提供するサロンであり、<strong>風俗的サービスは一切行なっておりません。</strong></p>
+      <p style="margin-bottom:0">18歳未満の方、同業者、スカウト目的、暴力団関係者、薬物使用者、泥酔者、その他当店がふさわしくないと判断した方のお問い合わせ及びご利用は固くお断り致します。</p>
     </div>
-
-    <div class="card">
-      <label>お名前（フルネーム）</label>
-      <input id="name" type="text" placeholder="氏名をご記入ください">
-      <label>お電話番号</label>
-      <input id="tel" type="tel" placeholder="例：09012345678">
-      <button id="sbtn" onclick="send()">同意して送信</button>
-    </div>
+    <p>施術前のシャワーと、施術中の紙ショーツのご着用を必ずお願い致します。</p>
+    <h4>施術をお断りする場合</h4>
+    <ul>
+      <li>18歳未満の方（高校生の方）</li>
+      <li>下半身を露出させる行為・自慰行為・性的サービスの要求</li>
+      <li>薬物・ドラッグ類の服用、所持、使用</li>
+      <li>同業者、スカウト及びスカウトに準ずる者のスカウト行為や発言等</li>
+      <li>カメラ機器を使っての撮影・盗聴・盗撮行為（当社規定の罰金）</li>
+      <li>当店を媒介としないセラピストへの勧誘・お誘い</li>
+      <li>ご利用時間終了後もセラピストを拘束する行為</li>
+      <li>泥酔状態の方</li>
+      <li>熱のある方、高血圧の方、重度の疾患を患っている方</li>
+      <li>足に重い水虫・炎症・怪我などの異常がある方</li>
+    </ul>
+    <h4>ご注意事項</h4>
+    <ul>
+      <li>施術中は指定の紙パンツのご着用をお願いします</li>
+      <li>伝染病・感染症の可能性がある方へのマッサージはお断りいたします</li>
+      <li>当店で行う手技は医療行為とは全く異なります</li>
+      <li>特定部分の長時間集中施術のご要求はお断りいたします</li>
+      <li>オイル使用に伴う皮膚トラブル等は責任を負いかねます</li>
+      <li>店内の貴重品は自己管理でお願いいたします</li>
+      <li>性的サービスの要求・接触行為等のセクハラ行為（当社規定の罰金）</li>
+      <li>当店は風俗店ではありません。その類の目的でのご来店は固くお断りします</li>
+    </ul>
+    <div class="warning">盗撮・盗聴等の行為があった際はすぐに所轄警察署に被害届を提出し、損害賠償請求等の法的手続きをとらせていただきます。禁止事項が行われた場合は即サービスを中止し、料金の返金には一切応じられませんのでご了承ください。</div>
   </div>
-
+  <div class="form-card">
+    <label class="form-label">お名前（フルネーム）<span>*</span></label>
+    <input class="form-input" id="name" type="text" placeholder="氏名をご記入ください">
+    <label class="form-label">お電話番号<span>*</span></label>
+    <input class="form-input" id="tel" type="tel" placeholder="例：09012345678">
+    <label class="agree-box" for="agree">
+      <input type="checkbox" id="agree">
+      <div class="agree-text">
+        <strong>上記の同意書内容を全て確認しました</strong>
+        記載の注意事項・禁止事項を遵守し、同意の上で送信します。
+      </div>
+    </label>
+    <button class="submit-btn" id="sbtn" onclick="send()">同意して送信</button>
+  </div>
+  <p class="note">個人情報は施術目的のみに使用いたします</p>
+</div>
+<div class="container complete" id="complete">
+  <span class="complete-icon">✅</span>
+  <h2>送信完了</h2>
+  <p>ご記入ありがとうございます。<br>スタッフにお声がけください。</p>
+</div>
 <script>
-  // 写真12枚目で発行されたVersion 15のURLをセットしました
-  const URL = "https://script.google.com/macros/s/AKfycbze2a41I-jaUtGhZ_H7hy-892lifMz6sZDDuZ0Qi73Wjij2mfDZHpIl1D1euKHj4tsOCg/exec";
-
-  async function send() {
-    const name = document.getElementById('name').value.trim();
-    const tel = document.getElementById('tel').value.trim();
-    if(!name || !tel) return alert("お名前と電話番号を入力してください");
-
-    const btn = document.getElementById('sbtn');
-    btn.disabled = true; btn.innerText = "送信中...";
-
-    try {
-      await fetch(URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: JSON.stringify({ 
-          name: name, 
-          tel: tel, 
-          date: new Date().toLocaleDateString('ja-JP'), 
-          options: "同意済み" 
-        })
-      });
-      document.body.innerHTML = "<div style='margin-top:150px;'><h2 style='font-size:80px;'>✅</h2><h2>送信完了しました</h2><p>ありがとうございました。</p></div>";
-    } catch(e) {
-      alert("送信に失敗しました。スタッフをお呼びください。");
-      btn.disabled = false; btn.innerText = "同意して送信";
-    }
+const GAS_URL="https://script.google.com/macros/s/AKfycbw7idTP8w43NP3kn00r3LIXsQsXEPI0diceCapazw1Tc-M8hXCNwXKLHOE5zPynxnaZVg/exec";
+async function send(){
+  const name=document.getElementById('name').value.trim();
+  const tel=document.getElementById('tel').value.trim();
+  const agree=document.getElementById('agree').checked;
+  if(!name||!tel){alert("お名前と電話番号を入力してください");return;}
+  if(!agree){alert("同意書の内容をご確認の上、チェックを入れてください");return;}
+  const btn=document.getElementById('sbtn');
+  btn.disabled=true;btn.textContent='送信中...';
+  const today=new Date().toLocaleDateString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit'});
+  try{
+    await fetch(GAS_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({name,tel,date:today,options:'同意済み'})});
+    document.getElementById('main').style.display='none';
+    document.getElementById('complete').style.display='block';
+  }catch(e){
+    alert("送信エラーが発生しました。スタッフをお呼びください。");
+    btn.disabled=false;btn.textContent='同意して送信';
   }
+}
 </script>
 </body>
 </html>
